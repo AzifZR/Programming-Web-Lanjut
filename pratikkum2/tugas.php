@@ -80,12 +80,27 @@
         .btn-submit:hover {
             background-color: #0069d9;
         }
+        .alert {
+            padding: 12px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 
     <div class="form-container">
         <h3>Input Data</h3>
+
+        <?php if (isset($_GET['pesan']) && $_GET['pesan'] == 'berhasil'): ?>
+            <div class="alert">
+                Data siswa berhasil disimpan ke dalam database!
+            </div>
+        <?php endif; ?>
 
         <form action="simpan.php" method="POST" id="formSiswa">
             <input type="hidden" name="redirect" value="tugas.php">
